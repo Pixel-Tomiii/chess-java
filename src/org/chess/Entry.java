@@ -25,7 +25,7 @@ public class Entry {
         board.setLayout(boardLayout);
         board.setPreferredSize(new Dimension(640, 640));
         board.setMinimumSize(new Dimension(640, 640));
-        board.setBackground(Color.BLACK);
+        // board.setBackground(Color.BLACK);
 
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(800, 700);
