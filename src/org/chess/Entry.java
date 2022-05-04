@@ -10,6 +10,10 @@ public class Entry {
         Chess chess = new Chess();
         chess.resetBoard();
 
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (Exception ignored) {}
+
         JFrame window = new JFrame("Chess");
         JPanel board = new JPanel();
         JPanel background = new JPanel();

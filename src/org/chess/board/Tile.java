@@ -17,6 +17,7 @@ public class Tile extends JButton {
 
     public Tile(int position) {
         color = (((position % 8) % 2) + ((position / 8) % 2)) == 1 ? Constants.BLACK : Constants.WHITE;
+        setOpaque(true);
         setBackground(color);
         setBorderPainted(false);
 
