@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class Tile extends JButton {
 
@@ -17,10 +18,26 @@ public class Tile extends JButton {
 
     public Tile(int position) {
         color = (((position % 8) % 2) + ((position / 8) % 2)) == 1 ? Constants.BLACK : Constants.WHITE;
+        update();
+
+        this.position = position;
+    }
+
+    /**
+     * Updates the color of the tile and adds a mouse listener to register the
+     * mouse hovering over the tile.
+     */
+    public void update() {
         setOpaque(true);
         setBackground(color);
         setBorderPainted(false);
 
+        // Remove all mouse listeners (including default listeners).
+        for (MouseListener event:getMouseListeners()) {
+            removeMouseListener(event);
+        }
+
+        // Add mouse listener for registering mouse events.
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -32,8 +49,6 @@ public class Tile extends JButton {
                 setBackground(getBackground().brighter());
             }
         });
-
-        this.position = position;
     }
 
     public void setPiece(Piece piece) {
