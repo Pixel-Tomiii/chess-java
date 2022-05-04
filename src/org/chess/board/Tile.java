@@ -39,14 +39,22 @@ public class Tile extends JButton {
 
         // Add mouse listener for registering mouse events.
         addMouseListener(new MouseAdapter() {
+
+            public void refresh() {
+                setVisible(false);
+                setVisible(true);
+            }
+
             @Override
             public void mouseEntered(MouseEvent e) {
                 setBackground(getBackground().darker());
+                refresh();
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 setBackground(getBackground().brighter());
+                refresh();
             }
         });
     }
