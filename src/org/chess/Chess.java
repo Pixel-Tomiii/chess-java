@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Chess {
     public Tile[] board;
 
-    public void resetBoard() {
-        loadBoard("default");
+    public boolean resetBoard() {
+        return loadBoard("default");
     }
 
     public boolean loadBoard(String boardName) {
