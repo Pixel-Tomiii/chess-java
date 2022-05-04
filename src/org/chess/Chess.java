@@ -36,8 +36,6 @@ public class Chess {
                 if (item >= '0' && item <= '9') {
                     amount *= 10;
                     amount += item - 48;
-                    System.out.println(position);
-                    System.out.println(amount);
                 }
                 else {
                     if (item != '.') {
